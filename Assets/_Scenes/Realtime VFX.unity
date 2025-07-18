@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thunder Animation
       objectReference: {fileID: 0}
+    - target: {fileID: 2604031948404085436, guid: b82107591fa9d56488ca818bc5aab3b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5791993003687356602, guid: b82107591fa9d56488ca818bc5aab3b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
