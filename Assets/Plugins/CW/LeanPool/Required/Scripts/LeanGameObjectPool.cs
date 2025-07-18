@@ -38,7 +38,8 @@ namespace Lean.Pool
 		public static LinkedList<LeanGameObjectPool> Instances = new LinkedList<LeanGameObjectPool>(); private LinkedListNode<LeanGameObjectPool> instancesNode;
 
 		/// <summary>The prefab this pool controls.</summary>
-		public GameObject Prefab { set { if (value != prefab) { UnregisterPrefab(); prefab = value; RegisterPrefab(); } } get { return prefab; } } [SerializeField] private GameObject prefab;
+		public GameObject Prefab { set { if (value != prefab) { UnregisterPrefab(); prefab = value; RegisterPrefab(); } } get { return prefab; } } 
+		[SerializeField] private GameObject prefab;
 
 		/// <summary>If you need to perform a special action when a prefab is spawned or despawned, then this allows you to control how that action is performed.
 		/// <tip>None</tip>If you use this then you must rely on the OnEnable and OnDisable messages.
@@ -268,13 +269,11 @@ namespace Lean.Pool
 				for (var i = despawnedClones.Count - 1; i >= 0; i--)
 				{
 					clone = despawnedClones[i];
-
 					despawnedClones.RemoveAt(i);
 
 					if (clone != null)
 					{
 						SpawnClone(clone, localPosition, localRotation, localScale, parent, worldPositionStays);
-
 						return true;
 					}
 
@@ -329,7 +328,6 @@ namespace Lean.Pool
 		public void DespawnOldest()
 		{
 			var clone = default(GameObject);
-
 			TryDespawnOldest(ref clone, true);
 		}
 
